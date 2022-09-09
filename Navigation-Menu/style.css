@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url("https://images.pexels.com/photos/388304/pexels-photo-388304.jpeg") center center no-repeat fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.navigation {
+    width: 400px;
+    height: 70px;
+    background-color: #16161c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    width: 350px;
+    text-align: center;
+}
+
+.navigation ul li {
+    width: 70px;
+    z-index: 2;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation ul li a .text {
+    position: absolute;
+    color: white;
+    font-family: "Segoe UI";
+    transform: translateY(15px);
+    background: #5271FF;
+    padding: 2px 7px;
+    border-radius: 12px;
+    font-size: 0.95em;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.navigation ul li a .icon {
+    font-size: 1.5em;
+    color: gray;
+    position: relative;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.navigation ul li.active .text {
+    transform: translateY(-4px);
+    opacity: 1;
+}
+
+.navigation ul li.active .icon {
+    transform: translateY(-32px);
+    color: #5271FF;
+}
+
+.indicator {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: #16161c;
+    top: -35px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.indicator::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    position: absolute;
+    border-radius: 50%;
+    top: 5px;
+    left: -28px;
+    box-shadow: 15px 18px #16161c;
+}
+
+.indicator::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    position: absolute;
+    border-radius: 50%;
+    top: 5px;
+    right: -28px;
+    box-shadow: -15px 18px #16161c;
+}
+
+.navigation ul li:nth-child(1).active~.indicator {
+    transform: translateX(calc(70 * 0));
+}
+
+.navigation ul li:nth-child(2).active~.indicator {
+    transform: translateX(calc(70px * 1));
+}
+
+.navigation ul li:nth-child(3).active~.indicator {
+    transform: translateX(calc(70px * 2));
+}
+
+.navigation ul li:nth-child(4).active~.indicator {
+    transform: translateX(calc(70px * 3));
+}
+
+.navigation ul li:nth-child(5).active~.indicator {
+    transform: translateX(calc(70px * 4));
+}
